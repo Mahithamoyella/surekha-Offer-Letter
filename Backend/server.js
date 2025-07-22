@@ -17,7 +17,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'postgres',
     database: 'employee_portals',
-    password: 'admin123',
+    password: 'admin834',
     port: 5432,
 });
 
@@ -518,7 +518,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3804;
+const PORT = process.env.PORT || 3100;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

@@ -5,16 +5,16 @@ services:
     container_name: Congratulations_backend
     build: ./Backend
     ports:
-      - "3804:3804"
+      - "3100:3100"
     depends_on:
       - postgres
     environment:
       - PGHOST=postgres
       - PGUSER=postgres
-      - PGPASSWORD=admin123
+      - PGPASSWORD=admin834
       - PGDATABASE=employee_portals
       - PGPORT=5432
-      - PORT=3804
+      - PORT=3100
     volumes:
       - ./Backend/public:/app/public
     networks:
@@ -24,7 +24,7 @@ services:
     container_name: Congratulations
     build: ./Congratulations
     ports:
-      - "8107:80"
+      - "8164:80"
     depends_on:
       - backend
     networks:
@@ -34,7 +34,7 @@ services:
     container_name: HR2
     build: ./HR
     ports:
-      - "8108:80"
+      - "8165:80"
     depends_on:
       - backend
     networks:
@@ -44,7 +44,7 @@ services:
     container_name: employee2
     build: ./employee
     ports:
-      - "8109:80"
+      - "8166:80"
     depends_on:
       - backend
     networks:
@@ -54,10 +54,10 @@ services:
     container_name: Congratulations_postgres
     image: postgres:13
     ports:
-      - "5804:5432"
+      - "5510:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin123
+      POSTGRES_PASSWORD: admin834
       POSTGRES_DB: employee_portals
     volumes:
       - postgres_data:/var/lib/postgresql/data
